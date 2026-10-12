@@ -1,0 +1,28 @@
+testpick git-mode demo
+A throwaway repository created under the OS temp directory (path redacted to <temp-repo>).
+The testpick project repository itself is not a git repository and is never touched.
+
+> cd <temp-repo>
+> git init -b main && git add -A && git commit -m initial
+
+# no changes yet
+> python -m testpick . --git
+testpick: no tests selected
+exit=0
+
+# modify pkg/core.py (uncommitted)
+> python -m testpick . --git
+tests/test_core.py
+exit=0
+
+> git add -A && git commit -m 'change core'
+
+# working tree clean again
+> python -m testpick . --git
+testpick: no tests selected
+exit=0
+
+# --base REF compares REF with HEAD: git diff --name-only <initial-commit> HEAD
+> python -m testpick . --git --base 6b724eacbf9760d50c57ba8bf03a8b8fafa5b026
+tests/test_core.py
+exit=0

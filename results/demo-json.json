@@ -1,0 +1,29 @@
+{
+  "changed": [
+    "src/shop/pricing.py"
+  ],
+  "selected": [
+    {
+      "path": "tests/test_pricing.py",
+      "reason": "import-chain",
+      "chain": [
+        "tests/test_pricing.py",
+        "shop.pricing"
+      ],
+      "fallback": false
+    },
+    {
+      "path": "tests/test_report.py",
+      "reason": "import-chain",
+      "chain": [
+        "tests/test_report.py",
+        "shop.report",
+        "shop.pricing"
+      ],
+      "fallback": false
+    }
+  ],
+  "format": "json",
+  "runner": "unittest",
+  "command": "python -m unittest tests.test_pricing tests.test_report"
+}

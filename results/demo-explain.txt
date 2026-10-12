@@ -1,0 +1,10 @@
+changed: src/shop/pricing.py
+selected 2 test file(s):
+
+tests/test_pricing.py
+  reason: import-chain
+  chain: tests/test_pricing.py -> shop.pricing (changed)
+
+tests/test_report.py
+  reason: import-chain
+  chain: tests/test_report.py -> shop.report -> shop.pricing (changed)
